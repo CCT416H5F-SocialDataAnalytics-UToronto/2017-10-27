@@ -1,0 +1,84 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "metadata": {
+    "collapsed": false,
+    "scrolled": true
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['Sartaj Singh', 'Gitesh Gupta', 'Andrea Maylen Montes de Oca', 'Sparsh Prasad', 'Abhinav Gupta', 'Rajveer Singh Yadav', 'Sourav Ravish', 'Shriyansh Gautam', 'Shashank Kumar', 'Alok Danodia', 'Robin Khurana', 'Jitendra Patel']\n",
+      "10101640953722381 b'Mark Zuckerberg'\n",
+      "118428522090530 b'Mark Neuber'\n",
+      "100567540702605 b'Mark A Zuckerbergg'\n",
+      "109315039823617 b'Zuckerberg M Mark'\n",
+      "102787880353720 b'Zuckerbergg Elliot Mark'\n",
+      "110111509755752 b'Mark Elliot Zuckerbergz'\n",
+      "130112831069450 b'Zuckerberge Mark S'\n",
+      "127874201291932 b'Markie Zuckerberg'\n"
+     ]
+    },
+    {
+     "ename": "GraphAPIError",
+     "evalue": "(#100) Cannot request permissions of other users",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mGraphAPIError\u001b[0m                             Traceback (most recent call last)",
+      "\u001b[0;32m<ipython-input-14-c7066dd7689a>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m()\u001b[0m\n\u001b[1;32m     16\u001b[0m \u001b[1;33m\u001b[0m\u001b[0m\n\u001b[1;32m     17\u001b[0m \u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0;32m---> 18\u001b[0;31m \u001b[0mpermissions\u001b[0m \u001b[1;33m=\u001b[0m \u001b[0mgraph\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0mget_permissions\u001b[0m\u001b[1;33m(\u001b[0m\u001b[0muser_id\u001b[0m\u001b[1;33m=\u001b[0m\u001b[1;34m\"10101640953722381\"\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m     19\u001b[0m \u001b[0mprint\u001b[0m\u001b[1;33m(\u001b[0m\u001b[1;34m'public_profile'\u001b[0m \u001b[1;32min\u001b[0m \u001b[0mpermissions\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[1;32m     20\u001b[0m \u001b[1;33m\u001b[0m\u001b[0m\n",
+      "\u001b[0;32mc:\\users\\user\\src\\facebook-sdk\\facebook\\__init__.py\u001b[0m in \u001b[0;36mget_permissions\u001b[0;34m(self, user_id)\u001b[0m\n\u001b[1;32m    107\u001b[0m         \u001b[1;34m\"\"\"Fetches the permissions object from the graph.\"\"\"\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[1;32m    108\u001b[0m         response = self.request(\n\u001b[0;32m--> 109\u001b[0;31m             \u001b[1;34m\"{0}/{1}/permissions\"\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0mformat\u001b[0m\u001b[1;33m(\u001b[0m\u001b[0mself\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0mversion\u001b[0m\u001b[1;33m,\u001b[0m \u001b[0muser_id\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m,\u001b[0m \u001b[1;33m{\u001b[0m\u001b[1;33m}\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    110\u001b[0m             )[\"data\"]\n\u001b[1;32m    111\u001b[0m         \u001b[1;32mreturn\u001b[0m \u001b[1;33m{\u001b[0m\u001b[0mx\u001b[0m\u001b[1;33m[\u001b[0m\u001b[1;34m\"permission\"\u001b[0m\u001b[1;33m]\u001b[0m \u001b[1;32mfor\u001b[0m \u001b[0mx\u001b[0m \u001b[1;32min\u001b[0m \u001b[0mresponse\u001b[0m \u001b[1;32mif\u001b[0m \u001b[0mx\u001b[0m\u001b[1;33m[\u001b[0m\u001b[1;34m\"status\"\u001b[0m\u001b[1;33m]\u001b[0m \u001b[1;33m==\u001b[0m \u001b[1;34m\"granted\"\u001b[0m\u001b[1;33m}\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n",
+      "\u001b[0;32mc:\\users\\user\\src\\facebook-sdk\\facebook\\__init__.py\u001b[0m in \u001b[0;36mrequest\u001b[0;34m(self, path, args, post_args, files, method)\u001b[0m\n\u001b[1;32m    291\u001b[0m \u001b[1;33m\u001b[0m\u001b[0m\n\u001b[1;32m    292\u001b[0m         \u001b[1;32mif\u001b[0m \u001b[0mresult\u001b[0m \u001b[1;32mand\u001b[0m \u001b[0misinstance\u001b[0m\u001b[1;33m(\u001b[0m\u001b[0mresult\u001b[0m\u001b[1;33m,\u001b[0m \u001b[0mdict\u001b[0m\u001b[1;33m)\u001b[0m \u001b[1;32mand\u001b[0m \u001b[0mresult\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0mget\u001b[0m\u001b[1;33m(\u001b[0m\u001b[1;34m\"error\"\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m:\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0;32m--> 293\u001b[0;31m             \u001b[1;32mraise\u001b[0m \u001b[0mGraphAPIError\u001b[0m\u001b[1;33m(\u001b[0m\u001b[0mresult\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    294\u001b[0m         \u001b[1;32mreturn\u001b[0m \u001b[0mresult\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[1;32m    295\u001b[0m \u001b[1;33m\u001b[0m\u001b[0m\n",
+      "\u001b[0;31mGraphAPIError\u001b[0m: (#100) Cannot request permissions of other users"
+     ]
+    }
+   ],
+   "source": [
+    "import facebook\n",
+    "\n",
+    "token = 'EAACEdEose0cBAEyczKNa6HIopZAA3g4ZASAtlfkEssc6ZCDgcYxYBPFWMkyjvZAGFczZBs7Io73XIJkBmwla3RKmBQbmJ6KtBFqoikzTSuqbxheYlax6l5O47gvZCdfwLa4RTMfliENoqNZACMguCv3dW62hzeg4RYfBVetT7MbEp3h7mJqfumcT5i7IRs49y9qBTraZB6RJlAZDZD'\n",
+    "\n",
+    "graph = facebook.GraphAPI(token)\n",
+    "profile = graph.get_object(\"me\")\n",
+    "friends = graph.get_connections(\"me\", \"friends\")\n",
+    "\n",
+    "friend_list = [friend['name'] for friend in friends['data']]\n",
+    "\n",
+    "print(friend_list)\n",
+    "users = graph.search(type='user',q='Mark Zuckerberg')\n",
+    "\n",
+    "for user in users['data']:\n",
+    "    print('%s %s' % (user['id'],user['name'].encode()))\n",
+    "    \n",
+    "    \n",
+    "\n",
+    "\n"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.0"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
